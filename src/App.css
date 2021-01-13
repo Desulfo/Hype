@@ -1,0 +1,37 @@
+.closeStyles {
+  background: linear-gradient(180deg, #f978a2 0%, #f1435b 100%);
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.submitButton {
+  background: linear-gradient(#7176f7, #ca75f1);
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 80px;
+  border-radius: 7px;
+  background: linear-gradient(0deg, #7176f7 0%, #ca75f1 100%);
+  box-shadow: 0 7px 19px 0 rgba(125, 118, 246, 0.31);
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.44px;
+  line-height: 38px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+input {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding-left: 10px;
+  border-radius: 7px;
+  border: 1px solid #4b597b;
+  height: 50px;
+  width: 250px;
+  margin: 5px;
+}
