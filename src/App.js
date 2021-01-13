@@ -28,8 +28,13 @@ function App() {
     setIsOpen(false);
   }
   return (
-    <div>
+    <main className="mainContent">
+      <header className="header">
+        <h2>People</h2>
+      </header>
+
       <button onClick={openModal}>Open Modal</button>
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -45,7 +50,7 @@ function App() {
           </button>
         </form>
       </Modal>
-    </div>
+    </main>
   );
 }
 
