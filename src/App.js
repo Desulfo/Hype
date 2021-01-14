@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import './App.css';
 import Modal from 'react-modal';
+
+import Info from './molecules/Info';
+import './App.css';
 
 const customStyles = {
   overlay: {
@@ -32,7 +34,18 @@ function App() {
       <header className="header">
         <h2>People</h2>
       </header>
+      <Info />
+      <button className="addButton">
+        <div className="minus"></div>
+        <div className="plus"></div>
+      </button>
 
+      <button className="backgroundButton">
+        <main className="addButton mainAdd">
+          <div className="minus"></div>
+          <div className="plus"></div>
+        </main>
+      </button>
       <button onClick={openModal}>Open Modal</button>
 
       <Modal
