@@ -1,25 +1,11 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 
-import Info from './molecules/Info';
 import './App.css';
+import Info from './molecules/Info';
+import StyledModal from './molecules/StyledModal';
+import MainAddButton from './atoms/MainAddButton';
+import ExtendedInfo from './molecules/ExtendedInfo';
 
-const customStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-  },
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    padding: '30px',
-  },
-};
-
-Modal.setAppElement('#root');
 function App() {
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
@@ -35,34 +21,10 @@ function App() {
         <h2>People</h2>
       </header>
       <Info />
-      <button className="addButton">
-        <div className="minus"></div>
-        <div className="plus"></div>
-      </button>
-
-      <button className="backgroundButton">
-        <main className="addButton mainAdd">
-          <div className="minus"></div>
-          <div className="plus"></div>
-        </main>
-      </button>
-      <button onClick={openModal}>Open Modal</button>
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
-        <button className="closeStyles" onClick={closeModal}>
-          X
-        </button>
-        <form>
-          <input type="text" placeholder="Your data" />
-          <button className="submitButton" type="submit">
-            Add
-          </button>
-        </form>
-      </Modal>
+      <ExtendedInfo />
+      <Info />
+      <MainAddButton openModal={openModal} />
+      <StyledModal closeModal={closeModal} modalIsOpen={modalIsOpen} />
     </main>
   );
 }

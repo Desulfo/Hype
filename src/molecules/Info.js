@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteButton from '../atoms/DeleteButton';
 
 import './Info.css';
 
@@ -6,10 +7,8 @@ function Info() {
   return (
     <section className="informationBox">
       <div className="purpleStripe"></div>
-      <p>data</p>
-      <button className="removeButton">
-        <div className="minus"></div>
-      </button>
+      <p className="info">data</p>
+      <DeleteButton />
     </section>
   );
 }
