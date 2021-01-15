@@ -17,8 +17,7 @@ function App() {
   const handleAddButtonClick = () => {
     openModal(false);
   };
-  function openModal(nested = false) {
-    console.log(nested);
+  function openModal(nested) {
     setIsNested(nested);
     setIsOpen(true);
   }
@@ -26,19 +25,15 @@ function App() {
     setIsOpen(false);
   }
   const addAction = (text) => {
-    console.log('to jak:', isNested);
     if (!isNested) {
-      console.log('jest');
       const newData = [...data, text];
       setData(newData);
     } else {
-      console.log('nie jest');
       const currentData = [...data];
       const objectInData = data.filter((value) => typeof value === 'object')[0];
       const indexOfObject = data.indexOf(objectInData);
       objectInData.subtitles.push(text);
       currentData[indexOfObject] = objectInData;
-      console.log(currentData);
       setData(currentData);
     }
   };
