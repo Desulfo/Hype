@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './DeleteButton.css';
-
 function DeleteButton({ deleteData, information, nested }) {
   const handleDelete = () => {
     deleteData(information, nested);

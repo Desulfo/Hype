@@ -10,10 +10,10 @@ function ExtendedInfo({ information, deleteData, openModal }) {
     openModal(true);
   };
   return (
-    <section className="informationBox">
+    <section className="informationBox decorationLine">
       <div className="purpleStripe"></div>
       <main>
-        <section className="extendedInfoWraper">
+        <section className="extendedInfoWraper decorationLine">
           <div className="extendedInfo">
             <p className="mainInfo">{information.title}</p>
           </div>

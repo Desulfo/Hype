@@ -5,7 +5,7 @@ import DeleteButton from './DeleteButton';
 
 function ExtraInfo({ subtitle, deleteData }) {
   return (
-    <section className="extraInfo">
+    <section className="extraInfo decorationLine">
       <p className="moreInfo">{subtitle}</p>
       <DeleteButton
         deleteData={deleteData}

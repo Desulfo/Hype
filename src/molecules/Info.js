@@ -5,7 +5,7 @@ import './Info.css';
 
 function Info({ information, deleteData }) {
   return (
-    <section className="informationBox">
+    <section className="informationBox decorationLine">
       <div className="purpleStripe"></div>
       <p className="info">{information}</p>
       <DeleteButton deleteData={deleteData} information={information} />

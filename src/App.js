@@ -54,7 +54,7 @@ function App() {
   };
   return (
     <main className="mainContent">
-      <header className="header">
+      <header className="header decorationLine">
         <h2>People</h2>
       </header>
       {data.map((information, index) => {
