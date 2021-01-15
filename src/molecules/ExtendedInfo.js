@@ -6,6 +6,9 @@ import AddButton from '../atoms/AddButton';
 import './ExtendedInfo.css';
 
 function ExtendedInfo({ information, deleteData, openModal }) {
+  const handleAddButtonClick = () => {
+    openModal(true);
+  };
   return (
     <section className="informationBox">
       <div className="purpleStripe"></div>
@@ -23,7 +26,7 @@ function ExtendedInfo({ information, deleteData, openModal }) {
             deleteData={deleteData}
           />
         ))}
-        <AddButton openModal={openModal} />
+        <AddButton openModal={handleAddButtonClick} />
       </main>
     </section>
   );

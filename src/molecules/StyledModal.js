@@ -27,7 +27,9 @@ function StyledModal({ closeModal, modalIsOpen, addAction }) {
   };
   const handleAddButton = (e) => {
     e.preventDefault();
-    addAction(inputValue);
+    inputValue === ''
+      ? window.alert("You can't add empty file.")
+      : addAction(inputValue);
     setInputValue('');
     closeModal();
   };

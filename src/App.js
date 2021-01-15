@@ -8,20 +8,39 @@ import ExtendedInfo from './molecules/ExtendedInfo';
 
 function App() {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [isNested, setIsNested] = useState(false);
   const [data, setData] = useState([
     'Age 40+',
     { title: 'Ethnicity', subtitles: ['Black', 'Hispanic'] },
     'Income yearly 45k USD+',
   ]);
-  function openModal() {
+  const handleAddButtonClick = () => {
+    openModal(false);
+  };
+  function openModal(nested = false) {
+    console.log(nested);
+    setIsNested(nested);
     setIsOpen(true);
   }
   function closeModal() {
     setIsOpen(false);
   }
   const addAction = (text) => {
-    const newData = [...data, text];
-    setData(newData);
+    console.log('to jak:', isNested);
+    if (!isNested) {
+      console.log('jest');
+      const newData = [...data, text];
+      setData(newData);
+    } else {
+      console.log('nie jest');
+      const currentData = [...data];
+      const objectInData = data.filter((value) => typeof value === 'object')[0];
+      const indexOfObject = data.indexOf(objectInData);
+      objectInData.subtitles.push(text);
+      currentData[indexOfObject] = objectInData;
+      console.log(currentData);
+      setData(currentData);
+    }
   };
   const deleteData = (information, nested = false) => {
     if (!nested) {
@@ -34,10 +53,8 @@ function App() {
       objectInData.subtitles = objectInData.subtitles.filter(
         (value) => value !== information
       );
-
       currentData[indexOfObject] = objectInData;
       setData(currentData);
-      console.log(data);
     }
   };
   return (
@@ -57,7 +74,7 @@ function App() {
           />
         );
       })}
-      <MainAddButton openModal={openModal} />
+      <MainAddButton openModal={handleAddButtonClick} />
       <StyledModal
         closeModal={closeModal}
         modalIsOpen={modalIsOpen}
