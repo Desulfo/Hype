@@ -2,9 +2,9 @@ import React from 'react';
 
 import './DeleteButton.css';
 
-function DeleteButton({ deleteData, information }) {
+function DeleteButton({ deleteData, information, nested }) {
   const handleDelete = () => {
-    deleteData(information);
+    deleteData(information, nested);
   };
   return (
     <button onClick={handleDelete} className="removeButton">

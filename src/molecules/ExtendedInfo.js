@@ -5,7 +5,7 @@ import AddButton from '../atoms/AddButton';
 
 import './ExtendedInfo.css';
 
-function ExtendedInfo({ information, deleteData }) {
+function ExtendedInfo({ information, deleteData, openModal }) {
   return (
     <section className="informationBox">
       <div className="purpleStripe"></div>
@@ -14,12 +14,16 @@ function ExtendedInfo({ information, deleteData }) {
           <div className="extendedInfo">
             <p className="mainInfo">{information.title}</p>
           </div>
-          <DeleteButton />
+          <DeleteButton information={information} deleteData={deleteData} />
         </section>
         {information.subtitles.map((subtitle, index) => (
-          <ExtraInfo subtitle={subtitle} key={10 + index} />
+          <ExtraInfo
+            subtitle={subtitle}
+            key={10 + index}
+            deleteData={deleteData}
+          />
         ))}
-        <AddButton />
+        <AddButton openModal={openModal} />
       </main>
     </section>
   );

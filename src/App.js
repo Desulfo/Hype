@@ -23,10 +23,22 @@ function App() {
     const newData = [...data, text];
     setData(newData);
   };
-  const deleteData = (information) => {
-    const newData = data.filter((value) => value !== information);
-    console.log(information, newData);
-    setData(newData);
+  const deleteData = (information, nested = false) => {
+    if (!nested) {
+      const newData = data.filter((value) => value !== information);
+      setData(newData);
+    } else {
+      const currentData = [...data];
+      const objectInData = data.filter((value) => typeof value === 'object')[0];
+      const indexOfObject = data.indexOf(objectInData);
+      objectInData.subtitles = objectInData.subtitles.filter(
+        (value) => value !== information
+      );
+
+      currentData[indexOfObject] = objectInData;
+      setData(currentData);
+      console.log(data);
+    }
   };
   return (
     <main className="mainContent">
@@ -38,6 +50,7 @@ function App() {
           <Info deleteData={deleteData} information={information} key={index} />
         ) : (
           <ExtendedInfo
+            openModal={openModal}
             deleteData={deleteData}
             information={information}
             key={index}

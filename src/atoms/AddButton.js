@@ -1,8 +1,8 @@
 import React from 'react';
 
-function AddButton() {
+function AddButton({ openModal }) {
   return (
-    <button className="addButton addButtonMargin">
+    <button onClick={openModal} className="addButton addButtonMargin">
       <div className="minus"></div>
       <div className="minus vertical"></div>
     </button>
