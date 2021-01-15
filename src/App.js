@@ -17,13 +17,13 @@ function App() {
   const handleAddButtonClick = () => {
     openModal(false);
   };
-  function openModal(nested) {
+  const openModal = (nested) => {
     setIsNested(nested);
     setIsOpen(true);
-  }
-  function closeModal() {
+  };
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
   const addAction = (text) => {
     if (!isNested) {
       const newData = [...data, text];
