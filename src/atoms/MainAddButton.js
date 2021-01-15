@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './MainAddButton.css';
-
 function MainAddButton({ openModal }) {
   return (
     <section className="addSection">

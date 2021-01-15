@@ -1,9 +1,8 @@
 import React from 'react';
+
 import DeleteButton from '../atoms/DeleteButton';
 import ExtraInfo from '../atoms/ExtraInfo';
 import AddButton from '../atoms/AddButton';
-
-import './ExtendedInfo.css';
 
 function ExtendedInfo({ information, deleteData, openModal }) {
   const handleAddButtonClick = () => {

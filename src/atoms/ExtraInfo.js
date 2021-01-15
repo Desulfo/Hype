@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './ExtraInfo.css';
 import DeleteButton from './DeleteButton';
 
 function ExtraInfo({ subtitle, deleteData }) {
