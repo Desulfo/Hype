@@ -23,25 +23,28 @@ function App() {
     const newData = [...data, text];
     setData(newData);
   };
-  const addData = (newTitle) => {
-    const newData = [...data, 'test'];
-    console.log({ new: newData });
+  const deleteData = (information) => {
+    const newData = data.filter((value) => value !== information);
+    console.log(information, newData);
     setData(newData);
-    console.log({ data: data });
   };
   return (
     <main className="mainContent">
       <header className="header">
         <h2>People</h2>
       </header>
-      {data.map((data, index) => {
-        if (typeof data === 'string') {
-          return <Info data={data} key={index} />;
-        } else {
-          return <ExtendedInfo data={data} key={index} />;
-        }
+      {data.map((information, index) => {
+        return typeof information === 'string' ? (
+          <Info deleteData={deleteData} information={information} key={index} />
+        ) : (
+          <ExtendedInfo
+            deleteData={deleteData}
+            information={information}
+            key={index}
+          />
+        );
       })}
-      <MainAddButton openModal={openModal} clickHandle={addData} />
+      <MainAddButton openModal={openModal} />
       <StyledModal
         closeModal={closeModal}
         modalIsOpen={modalIsOpen}

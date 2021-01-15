@@ -3,12 +3,12 @@ import DeleteButton from '../atoms/DeleteButton';
 
 import './Info.css';
 
-function Info({ data }) {
+function Info({ information, deleteData }) {
   return (
     <section className="informationBox">
       <div className="purpleStripe"></div>
-      <p className="info">{data}</p>
-      <DeleteButton />
+      <p className="info">{information}</p>
+      <DeleteButton deleteData={deleteData} information={information} />
     </section>
   );
 }

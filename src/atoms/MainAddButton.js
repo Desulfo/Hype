@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MainAddButton.css';
 
-function MainAddButton({ openModal, clickHandle }) {
+function MainAddButton({ openModal }) {
   return (
     <section className="addSection">
       <button onClick={openModal} className="backgroundButton">
