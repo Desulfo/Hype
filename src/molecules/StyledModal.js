@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 import './StyledModal.css';
@@ -20,7 +20,17 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-function StyledModal({ closeModal, modalIsOpen }) {
+function StyledModal({ closeModal, modalIsOpen, addAction }) {
+  const [inputValue, setInputValue] = useState('');
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+  const handleAddButton = (e) => {
+    e.preventDefault();
+    addAction(inputValue);
+    setInputValue('');
+    closeModal();
+  };
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -31,8 +41,17 @@ function StyledModal({ closeModal, modalIsOpen }) {
         X
       </button>
       <form>
-        <input type="text" placeholder="Your data" />
-        <button className="submitButton" type="submit">
+        <input
+          onChange={handleInputChange}
+          value={inputValue}
+          type="text"
+          placeholder="Your data"
+        />
+        <button
+          onClick={handleAddButton}
+          className="submitButton"
+          type="submit"
+        >
           Add
         </button>
       </form>

@@ -5,7 +5,7 @@ import './MainAddButton.css';
 function MainAddButton({ openModal, clickHandle }) {
   return (
     <section className="addSection">
-      <button onClick={clickHandle} className="backgroundButton">
+      <button onClick={openModal} className="backgroundButton">
         <main className="addButton mainAdd">
           <div className="line"></div>
           <div className="line vertical"></div>

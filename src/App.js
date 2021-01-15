@@ -19,6 +19,10 @@ function App() {
   function closeModal() {
     setIsOpen(false);
   }
+  const addAction = (text) => {
+    const newData = [...data, text];
+    setData(newData);
+  };
   const addData = (newTitle) => {
     const newData = [...data, 'test'];
     console.log({ new: newData });
@@ -38,7 +42,11 @@ function App() {
         }
       })}
       <MainAddButton openModal={openModal} clickHandle={addData} />
-      <StyledModal closeModal={closeModal} modalIsOpen={modalIsOpen} />
+      <StyledModal
+        closeModal={closeModal}
+        modalIsOpen={modalIsOpen}
+        addAction={addAction}
+      />
     </main>
   );
 }
