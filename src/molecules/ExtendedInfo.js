@@ -5,19 +5,20 @@ import AddButton from '../atoms/AddButton';
 
 import './ExtendedInfo.css';
 
-function ExtendedInfo() {
+function ExtendedInfo({ data }) {
   return (
     <section className="informationBox">
       <div className="purpleStripe"></div>
       <main>
         <section className="extendedInfoWraper">
           <div className="extendedInfo">
-            <p className="mainInfo">Data</p>
+            <p className="mainInfo">{data.title}</p>
           </div>
           <DeleteButton />
         </section>
-        <ExtraInfo />
-        <ExtraInfo />
+        {data.subtitles.map((subtitle, index) => (
+          <ExtraInfo subtitle={subtitle} key={10 + index} />
+        ))}
         <AddButton />
       </main>
     </section>

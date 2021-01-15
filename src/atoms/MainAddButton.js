@@ -2,10 +2,10 @@ import React from 'react';
 
 import './MainAddButton.css';
 
-function MainAddButton({ openModal }) {
+function MainAddButton({ openModal, clickHandle }) {
   return (
     <section className="addSection">
-      <button onClick={openModal} className="backgroundButton">
+      <button onClick={clickHandle} className="backgroundButton">
         <main className="addButton mainAdd">
           <div className="line"></div>
           <div className="line vertical"></div>

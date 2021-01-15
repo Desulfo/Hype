@@ -3,10 +3,10 @@ import React from 'react';
 import './ExtraInfo.css';
 import DeleteButton from './DeleteButton';
 
-function ExtraInfo() {
+function ExtraInfo({ subtitle }) {
   return (
     <section className="extraInfo">
-      <p className="moreInfo">Black</p>
+      <p className="moreInfo">{subtitle}</p>
       <DeleteButton />
     </section>
   );
