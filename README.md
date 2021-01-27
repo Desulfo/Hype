@@ -14,8 +14,8 @@ Live version: [Hype](https://desulfo.github.io/Hype/)
 In console:
 
 ```
-git clone https://github.com/Desulfo/HackerNews.git
-cd HackerNews
+git clone https://github.com/Desulfo/Hype.git
+cd Hype
 npm init
 npm start
 ```
